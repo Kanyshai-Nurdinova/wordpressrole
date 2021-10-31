@@ -1,0 +1,13 @@
+---
+# tasks file for users
+- name: Install packages
+  hosts: all
+  tasks: 
+  - name: Add users
+    user:
+      name: "{{ item }}"
+      state: present
+    with_items:
+    - ben
+    - johnd
+    - lisa

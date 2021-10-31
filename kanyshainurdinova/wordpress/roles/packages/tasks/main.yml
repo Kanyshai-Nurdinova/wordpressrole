@@ -1,0 +1,16 @@
+---
+# tasks file for packages
+- name: Install packages
+  hosts: localhost
+  become: true
+  become_method: sudo 
+  user: ec2-user
+  tasks: 
+  - name: Install packages 
+    ansible.builtin.package:
+      name: 
+      - telnet
+      - wget
+      - elinks
+      - unzip
+      state: present            #absent       #latest
